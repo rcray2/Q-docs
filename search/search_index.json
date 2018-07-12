@@ -37,7 +37,7 @@
         },
         {
             "location": "/developer/",
-            "text": "Developer Guide\n\n\nGraphQL\n\n\nGraphQL Learning Resources\n\n\nKnowledge Microservices and Bots\n\n\nDevelopment Stages\n\n\nStage: Design\n\n\nStage: Local Service (Standalone)\n\n\nStage: Local Service (Maana)\n\n\nStage: Unmanaged Service\n\n\nStage: Managed Service\n\n\nDebugging a Knowledge Microservice\n\n\nThe BotAction Protocol\n\n\nKnowledge Applications",
+            "text": "Developer Guide\n\n\nGraphQL\n\n\nGraphQL Learning Resources\n\n\nKnowledge Microservices and Bots\n\n\nDevelopment Stages\n\n\nStage: Design\n\n\nStage: Local Service (Standalone)\n\n\nStage: Local Service (Maana)\n\n\nStage: Unmanaged Service\n\n\nStage: Managed Service\n\n\nDebugging a Knowledge Microservice\n\n\nThe BotAction Protocol\n\n\nKnowledge Applications\n\n\nMaana Plugin for the GraphQL Command Line\n\n\nCustom \ngraphql-cli\n plugin to programmatically interact with a Maana cluster.\n\n\n\n\nAll examples assume you are running from a directory with a valid \n.graphqlconfig\n file. See below for how to add authentication.\n\n\n\n\nCommands\n\n\nmload\n\n\nUpload CSV and JSON files to a Maana cloud instance, with possible NDF conversion.\n\n\nNote: JSON files must be a collection (array) of instances.\n\n\nNormalized Document Format\n\n\nThe NDF is an \nemerging standard\n used by the \nPrisma ORM-like layer\n.\n\n\nArguments and Options\n\n\n\n\nfileOrDir\n (required) - specifies a supported file (.csv or .json) or a directory (recursively processed)\n\n\nmutation names are automatically inferred from file names\n\n\nfile names should match the (singular) entity name (e.g., person.json) => addPersons (= assumed mutation)\n\n\n-m | --mutation\n (optional) - explicit mutation to use (for a single file only)\n\n\n-b | --batch\n (optional) - limit on how many instances to send at time\n\n\n-n | --ndfout\n (optional) - Normalized Document Format conversion output\n\n\n-t | --type\n (optional) - explicit typename to use for NDF conversion\n\n\n-p | --project\n (optional) - project in .graphqlconfig\n\n\n-e | --endpoint\n (optional) - optional endpoing in .graphqlconfig\n\n\n\n\nExamples\n\n\n# load all the CSV and JSON files in the data folder using the .graphqlconfig project 'test\ngql mload -p test data/\n\n# load a specific file\ngql mload -p test data/person.json\n\n# load a specific file in batches with an explicit mutation\ngql mload -p test data/person.json -m addEmployees -b 1000\n\n# convert a folder of data to NDF format\ngql mload -p test data/ -n ndf/\n\n\n\n\nmaddsvc\n\n\nAdd or update a service from source (model file) or manifest (service description).\n\n\nNote: Either -s (source) or -m (manifest) is required.\n\n\nArguments and Options\n\n\n\n\nname\n (required) - name for the service\n\n\n-i | --id\n (optional) - explicit ID of the service (will overwrite, if it already exists)\n\n\n-d | --desc\n (optional) - description of the service\n\n\n-s | --source\n (ootional) - a GraphQL SDL file defining a set of types that Maana will create a fully-managed service for\n\n\n-m | --manifest\n (optional) - a JSON description of a service manifest instance (see below)\n\n\n\n\nExamples\n\n\n# create a service from a model with an explicit ID\ngql maddsvc MyService -s model.gql -i io.acme.myservice\n\n\n\n\nmsignin\n\n\nSign into the Maana CLI so you can authenticate against the Maana API.\n\n\nCompatible with Maana Q v3.1.0+.\n\n\nArguments and Options\n\n\n\n\nAuthentication Token\n (optional) - the authentication token retrieved from the web UI. You will be asked for this later if it is not provided.\n\n\n-p | --project\n (optional) - when provided you will only sign in for a specific project instead of all projects in the config file\n\n\n\n\nExamples\n\n\n# sign into the Maana CLI\ngql msignin\n\n\n\n\nmaddheaers\n\n\nAdds authentication headers for authenticating against the Maana API.\n\n\nCompatible with Maana Q v3.1.0+.\n\n\nArguments and Options\n\n\n\n\n-p | --project\n (optional) - only adds the headers to a specific project when provided, otherwise adds them to all the projects in the config file\n\n\n\n\nExamples\n\n\n# add headers to a project\ngql maddheaders -p ckg\n\n\n\n\nmenv\n\n\nUsed to export the authentication environment variables into your terminal so that the CLI commands can use them.\n\n\nCompatible with Maana Q v3.1.0+.\n\n\nArguments and Options\n\n\n\n\n-s | --shell\n (optional) - defines the shell that you are using (bash, fish, zsh, cmd, powershell). If this is not provided, the \nSHELL\n environment variable is used.\n\n\n-p | --project\n (optional) - when provided will look for project specific authentication information instead of looking at the root config file level\n\n\n\n\nExamples\n\n\n# Bash\ngql menv --shell bash\n\n\n\n\nrem Windows command line\ngql menv --shell cmd\n\n\n\n\n# Windows power shell\ngql menv --shell powershell\n\n\n\n\nmrefreshauth\n\n\nUsed to get an new authentication token when it has expired. The Maana API must be configured to support this.\n\n\nCompatible with Maana Q v3.1.0+.\n\n\nArguments and Options\n\n\n\n\n-p | --project\n (optional) - when provided this will refresh project specific authentication information instead of doing it at the root config level\n\n\n\n\nExamples\n\n\n# refreshing an authentication token\ngql mrefreshauth\n\n\n\n\nAdd authentication to requests\n\n\nMaana endpoints require a valid (authenticated) user in order to prevent unauthorized access.\n\n\nMaana Q v3.1.0 and later\n\n\nAfter creating a new \n.graphqlconfig\n file connecting to a Maana API endpoint:\n\n\n\n\nLogin to the Maana Knowledge Portal\n\n\nClick on your user icon and select your profile\n\n\nAt the bottom of the profile page click the 'Get CLI Authentication Token' button\n\n\nGo through the login process (again)\n\n\nCopy the generated auth token that shows up below the button\n\n\nIn the terminal run \ngql msignin\n and when asked paste the Authentication Token into the prompt\n\n\nThen run \ngql menv --shell <your shell>\n and follow the directions at the bottom of the output\n\n\nRun \ngql ping\n to test out that the authentication works (you will get an error if it did not)\n\n\n\n\nAdditional Notes\n\n\n\n\nWhen you add another project to your \n.graphqlconfig\n file you can run \ngql maddheaders --project <Project Name>\n to add the headers to the new project.\n\n\nWhen you want to run the CLI against the Maana API in a different terminal window you will need to run \ngql env\n again.\n\n\nIf your authentication token expires you can run \ngql mrefreshauth\n to refresh the authentication token, when the Maana API is configured to allow the refreshing of authentication tokens.\n\n\n\n\nMaana Q v3.0.5\n\n\nAfter creating a new project connecting to a Maana endpoint, you will need to setup the project to add an authentication header to the requests.\n\n\n\n\nLogin to the Maana Knowledge Portal\n\n\nClick on your user icon and select your profile\n\n\nAt the bottom of the profile page click the 'Get CLI Authentication Token' button\n\n\nGo through the login process (again)\n\n\nCopy the generated auth token that shows up below the button\n\n\nIn the terminal add an environment variable for the auth token\n\n\n\n\n# *nix based systems\nexport AUTH_TOKEN_ENV=<paste auth token here>\n\n\n\n\nrem Windows command line\nset AUTH_TOKEN_ENV=<paste auth token here>\n\n\n\n\n# Windows power shell\n$Env:AUTH_TOKEN_ENV = \"<paste auth token here>\"\n\n\n\n\nAdd the authorization header to the Maana endpoint:\n\n\n     \"ckg\": {\n      \"schemaPath\": \"ckg.graphql\",\n       \"extensions\": {\n         \"endpoints\": {\n-           \"default\": \"https://qtraining01.knowledge.maana.io:8443/graphql\"\n+           \"default\": {\n+             \"url\": \"https://qtraining01.knowledge.maana.io:8443/graphql\",\n+             \"headers\": {\n+               \"Authorization\": \"Bearer ${env:AUTH_TOKEN_ENV}\"\n+             }\n+           }\n         }\n       }\n     }\n\n\n\n\nTo build and install\n\n\nnpm i\nnpm run build\nnpm i -g\n\n\n\n\nTo publish\n\n\nnpm adduser --registry https://registry.npmjs.org\nnpm publish --registry https://registry.npmjs.org",
             "title": "Developer"
         },
         {
@@ -104,6 +104,141 @@
             "location": "/developer/#knowledge-applications",
             "text": "",
             "title": "Knowledge Applications"
+        },
+        {
+            "location": "/developer/#maana-plugin-for-the-graphql-command-line",
+            "text": "Custom  graphql-cli  plugin to programmatically interact with a Maana cluster.   All examples assume you are running from a directory with a valid  .graphqlconfig  file. See below for how to add authentication.",
+            "title": "Maana Plugin for the GraphQL Command Line"
+        },
+        {
+            "location": "/developer/#commands",
+            "text": "",
+            "title": "Commands"
+        },
+        {
+            "location": "/developer/#mload",
+            "text": "Upload CSV and JSON files to a Maana cloud instance, with possible NDF conversion.  Note: JSON files must be a collection (array) of instances.",
+            "title": "mload"
+        },
+        {
+            "location": "/developer/#normalized-document-format",
+            "text": "The NDF is an  emerging standard  used by the  Prisma ORM-like layer .",
+            "title": "Normalized Document Format"
+        },
+        {
+            "location": "/developer/#arguments-and-options",
+            "text": "fileOrDir  (required) - specifies a supported file (.csv or .json) or a directory (recursively processed)  mutation names are automatically inferred from file names  file names should match the (singular) entity name (e.g., person.json) => addPersons (= assumed mutation)  -m | --mutation  (optional) - explicit mutation to use (for a single file only)  -b | --batch  (optional) - limit on how many instances to send at time  -n | --ndfout  (optional) - Normalized Document Format conversion output  -t | --type  (optional) - explicit typename to use for NDF conversion  -p | --project  (optional) - project in .graphqlconfig  -e | --endpoint  (optional) - optional endpoing in .graphqlconfig",
+            "title": "Arguments and Options"
+        },
+        {
+            "location": "/developer/#examples",
+            "text": "# load all the CSV and JSON files in the data folder using the .graphqlconfig project 'test\ngql mload -p test data/\n\n# load a specific file\ngql mload -p test data/person.json\n\n# load a specific file in batches with an explicit mutation\ngql mload -p test data/person.json -m addEmployees -b 1000\n\n# convert a folder of data to NDF format\ngql mload -p test data/ -n ndf/",
+            "title": "Examples"
+        },
+        {
+            "location": "/developer/#maddsvc",
+            "text": "Add or update a service from source (model file) or manifest (service description).  Note: Either -s (source) or -m (manifest) is required.",
+            "title": "maddsvc"
+        },
+        {
+            "location": "/developer/#arguments-and-options_1",
+            "text": "name  (required) - name for the service  -i | --id  (optional) - explicit ID of the service (will overwrite, if it already exists)  -d | --desc  (optional) - description of the service  -s | --source  (ootional) - a GraphQL SDL file defining a set of types that Maana will create a fully-managed service for  -m | --manifest  (optional) - a JSON description of a service manifest instance (see below)",
+            "title": "Arguments and Options"
+        },
+        {
+            "location": "/developer/#examples_1",
+            "text": "# create a service from a model with an explicit ID\ngql maddsvc MyService -s model.gql -i io.acme.myservice",
+            "title": "Examples"
+        },
+        {
+            "location": "/developer/#msignin",
+            "text": "Sign into the Maana CLI so you can authenticate against the Maana API.  Compatible with Maana Q v3.1.0+.",
+            "title": "msignin"
+        },
+        {
+            "location": "/developer/#arguments-and-options_2",
+            "text": "Authentication Token  (optional) - the authentication token retrieved from the web UI. You will be asked for this later if it is not provided.  -p | --project  (optional) - when provided you will only sign in for a specific project instead of all projects in the config file",
+            "title": "Arguments and Options"
+        },
+        {
+            "location": "/developer/#examples_2",
+            "text": "# sign into the Maana CLI\ngql msignin",
+            "title": "Examples"
+        },
+        {
+            "location": "/developer/#maddheaers",
+            "text": "Adds authentication headers for authenticating against the Maana API.  Compatible with Maana Q v3.1.0+.",
+            "title": "maddheaers"
+        },
+        {
+            "location": "/developer/#arguments-and-options_3",
+            "text": "-p | --project  (optional) - only adds the headers to a specific project when provided, otherwise adds them to all the projects in the config file",
+            "title": "Arguments and Options"
+        },
+        {
+            "location": "/developer/#examples_3",
+            "text": "# add headers to a project\ngql maddheaders -p ckg",
+            "title": "Examples"
+        },
+        {
+            "location": "/developer/#menv",
+            "text": "Used to export the authentication environment variables into your terminal so that the CLI commands can use them.  Compatible with Maana Q v3.1.0+.",
+            "title": "menv"
+        },
+        {
+            "location": "/developer/#arguments-and-options_4",
+            "text": "-s | --shell  (optional) - defines the shell that you are using (bash, fish, zsh, cmd, powershell). If this is not provided, the  SHELL  environment variable is used.  -p | --project  (optional) - when provided will look for project specific authentication information instead of looking at the root config file level",
+            "title": "Arguments and Options"
+        },
+        {
+            "location": "/developer/#examples_4",
+            "text": "# Bash\ngql menv --shell bash  rem Windows command line\ngql menv --shell cmd  # Windows power shell\ngql menv --shell powershell",
+            "title": "Examples"
+        },
+        {
+            "location": "/developer/#mrefreshauth",
+            "text": "Used to get an new authentication token when it has expired. The Maana API must be configured to support this.  Compatible with Maana Q v3.1.0+.",
+            "title": "mrefreshauth"
+        },
+        {
+            "location": "/developer/#arguments-and-options_5",
+            "text": "-p | --project  (optional) - when provided this will refresh project specific authentication information instead of doing it at the root config level",
+            "title": "Arguments and Options"
+        },
+        {
+            "location": "/developer/#examples_5",
+            "text": "# refreshing an authentication token\ngql mrefreshauth",
+            "title": "Examples"
+        },
+        {
+            "location": "/developer/#add-authentication-to-requests",
+            "text": "Maana endpoints require a valid (authenticated) user in order to prevent unauthorized access.",
+            "title": "Add authentication to requests"
+        },
+        {
+            "location": "/developer/#maana-q-v310-and-later",
+            "text": "After creating a new  .graphqlconfig  file connecting to a Maana API endpoint:   Login to the Maana Knowledge Portal  Click on your user icon and select your profile  At the bottom of the profile page click the 'Get CLI Authentication Token' button  Go through the login process (again)  Copy the generated auth token that shows up below the button  In the terminal run  gql msignin  and when asked paste the Authentication Token into the prompt  Then run  gql menv --shell <your shell>  and follow the directions at the bottom of the output  Run  gql ping  to test out that the authentication works (you will get an error if it did not)",
+            "title": "Maana Q v3.1.0 and later"
+        },
+        {
+            "location": "/developer/#additional-notes",
+            "text": "When you add another project to your  .graphqlconfig  file you can run  gql maddheaders --project <Project Name>  to add the headers to the new project.  When you want to run the CLI against the Maana API in a different terminal window you will need to run  gql env  again.  If your authentication token expires you can run  gql mrefreshauth  to refresh the authentication token, when the Maana API is configured to allow the refreshing of authentication tokens.",
+            "title": "Additional Notes"
+        },
+        {
+            "location": "/developer/#maana-q-v305",
+            "text": "After creating a new project connecting to a Maana endpoint, you will need to setup the project to add an authentication header to the requests.   Login to the Maana Knowledge Portal  Click on your user icon and select your profile  At the bottom of the profile page click the 'Get CLI Authentication Token' button  Go through the login process (again)  Copy the generated auth token that shows up below the button  In the terminal add an environment variable for the auth token   # *nix based systems\nexport AUTH_TOKEN_ENV=<paste auth token here>  rem Windows command line\nset AUTH_TOKEN_ENV=<paste auth token here>  # Windows power shell\n$Env:AUTH_TOKEN_ENV = \"<paste auth token here>\"  Add the authorization header to the Maana endpoint:       \"ckg\": {\n      \"schemaPath\": \"ckg.graphql\",\n       \"extensions\": {\n         \"endpoints\": {\n-           \"default\": \"https://qtraining01.knowledge.maana.io:8443/graphql\"\n+           \"default\": {\n+             \"url\": \"https://qtraining01.knowledge.maana.io:8443/graphql\",\n+             \"headers\": {\n+               \"Authorization\": \"Bearer ${env:AUTH_TOKEN_ENV}\"\n+             }\n+           }\n         }\n       }\n     }",
+            "title": "Maana Q v3.0.5"
+        },
+        {
+            "location": "/developer/#to-build-and-install",
+            "text": "npm i\nnpm run build\nnpm i -g",
+            "title": "To build and install"
+        },
+        {
+            "location": "/developer/#to-publish",
+            "text": "npm adduser --registry https://registry.npmjs.org\nnpm publish --registry https://registry.npmjs.org",
+            "title": "To publish"
         },
         {
             "location": "/administrator/",
