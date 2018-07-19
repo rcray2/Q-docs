@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/",
-            "text": "Maana Knowledge Platform\n\n\nMaana product documentation to be written by master RC!\n\n\nGuides\n\n\n\n\nUser\n\n\nDeveloper\n\n\nAdministrator",
+            "text": "Maana Knowledge Platform\n\n\nMaana product documentation to be written by master RC!\n\n\nGuides\n\n\n\n\nUser\n\n\nDeveloper\n\n\nAdministrator\n\n\n\n\nconst foo = bar()",
             "title": "Home"
         },
         {
@@ -12,7 +12,7 @@
         },
         {
             "location": "/#guides",
-            "text": "User  Developer  Administrator",
+            "text": "User  Developer  Administrator   const foo = bar()",
             "title": "Guides"
         },
         {
