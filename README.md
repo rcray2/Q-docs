@@ -11,6 +11,7 @@ To produce a static site, within the root direcotry, simply:
 ```bash
 mkdocs build
 ```
+Hello
 
 ## Serve
 To test the site:
