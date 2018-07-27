@@ -1,32 +1,3 @@
-![](../../Desktop/IMAGES/maana-r.png)
-
-![](file:////Users/robertray/Library/Group Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png)
-
-MAANA Q 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
-Knowledge Technology Development Guide
-
-
-
-
-
-
-
-
-
-
 Research and Development : Developer Guide  
 
 1.  [Research and Development](index.html)
