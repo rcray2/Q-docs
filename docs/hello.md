@@ -146,9 +146,9 @@ With the Computational Knowledge Graph:
 
 - As source data is updated in real time, so are the nodes and the computational models that act on that data, permitting more complex relationships to be modeled, and enhancing the graph&#39;s ability to understand the connections between concepts (rather than simple strings of data), and encouraging optimization of decisions and operations.
 
-The CKG consists of **concepts** and **properties** , **instances** and **values** , and **relations** and **links**.
+The CKG consists of **concepts** and **properties**, **instances** and **values**, and **relations** and **links**.
 
-| Consider the concept of a _ContainerShip_with the properties of _name_, _length_, _position_, etc.  A specific instance (entity) for our ContainerShip might have values for each of these properties, such as the vessel Maersk Viking having a length of _400 meters_.  Such properties can be scalar (e.g., numbers, strings, dates) or might refer to other concepts/instances - such as the _Hold Cargo_ of the vessel. |
+| Consider the concept of a ContainerShip with the properties of name, length, position, etc.  A specific instance (entity) for our ContainerShip might have values for each of these properties, such as the vessel Maersk Viking having a length of 400 meters.  Such properties can be scalar (e.g., numbers, strings, dates) or might refer to other concepts/instances - such as the Hold Cargo of the vessel.  |
 | --- |
 
 In some cases, property values for an instance may simply be stored, as they are rarely subject to change.  In other cases, they will be dynamically computed, due to constantly changing values - such as a ship&#39;s _weight_ (which is dependent upon its cargo) or variables like the vessel&#39;s _current position_ (which requires getting a GPS reading).
