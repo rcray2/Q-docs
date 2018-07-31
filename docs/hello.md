@@ -121,7 +121,7 @@ GraphQL creates a uniform API across your entire application without being limit
  
 For more information on using on Graph QL, please refer to the link provided below:
 
-- . [How to GraphQL](https://www.howtographql.com/)
+-  [How to GraphQL](https://www.howtographql.com/)
 
 ## The Maana Solution Core
 
