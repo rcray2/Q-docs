@@ -178,8 +178,16 @@ Prior to creating a working computational knowledge graph, it is suggested that 
 
 
 
-1.
-  1. 1.1.Knowledge Microservices
+
+
+
+
+
+
+
+
+
+  1.1.Knowledge Microservices
 
 Knowledge microservices are a class of microservices that are developed for the MAANA platform.
 
