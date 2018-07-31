@@ -131,21 +131,20 @@ At the core of any Maana solution sits our Computational Knowledge Graph, a netw
 
 With the Computational Knowledge Graph:
 
-- .The Graph is dynamic.  Nodes, which represent concepts in the graph, are not static containers, but rather act as computational vessels, allowing algorithms to be stored and executed.
-- .Reusable Models - Knowledge Graph flexibility enables groups across the organization to leverage and build-upon models created by other groups, dramatically accelerating the speed at which models are created throughout the organization.  These models are dynamic, and once operationalized into applications, they learn and adapt based on the user behaviors and provide continuous intelligence for day-to-day operations.
+- The Graph is dynamic.  Nodes, which represent concepts in the graph, are not static containers, but rather act as computational vessels, allowing algorithms to be stored and executed.
+- Reusable Models - Knowledge Graph flexibility enables groups across the organization to leverage and build-upon models created by other groups, dramatically accelerating the speed at which models are created throughout the organization.  These models are dynamic, and once operationalized into applications, they learn and adapt based on the user behaviors and provide continuous intelligence for day-to-day operations.
 
-- .The structure of data is separated from its content.  This separation enables a fluidity of modeling - data from any source or format can be seamlessly integrated, modeled, searched, analyzed, operationalized and re-purposed.
+- The structure of data is separated from its content.  This separation enables a fluidity of modeling - data from any source or format can be seamlessly integrated, modeled, searched, analyzed, operationalized and re-purposed.
 
-- .Data remains at the source - only the most relevant data, within the context of what is being optimized, is indexed and brought into the graph.
-- .Each resulting Data Model is a unique combination of three key components, which are instrumental in optimizing assets and decision flows:
-
-1. Subject Matter Expertise
-2. Relevant Data from Silos
-3. The Right Algorithm
+- Data remains at the source - only the most relevant data, within the context of what is being optimized, is indexed and brought into the graph.
+- Each resulting Data Model is a unique combination of three key components, which are instrumental in optimizing assets and decision flows:
+              1. Subject Matter Expertise
+              2. Relevant Data from Silos
+              3. The Right Algorithm
 
 **Note** :  These algorithms could be as simple as pulling in new data from an external source, to as complicated as classification of documents through machine learning.
 
-- .As source data is updated in real time, so are the nodes and the computational models that act on that data, permitting more complex relationships to be modeled, and enhancing the graph&#39;s ability to understand the connections between concepts (rather than simple strings of data), and encouraging optimization of decisions and operations.
+- As source data is updated in real time, so are the nodes and the computational models that act on that data, permitting more complex relationships to be modeled, and enhancing the graph&#39;s ability to understand the connections between concepts (rather than simple strings of data), and encouraging optimization of decisions and operations.
 
 The CKG consists of **concepts** and **properties** , **instances** and **values** , and **relations** and **links**.
 
