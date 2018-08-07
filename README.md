@@ -16,39 +16,28 @@
 
 # Table of Contents
 
-| |
-| --- |
-| |
-| |
-| |
-| |
-| |
-| The Computational Knowledge Graph (CKG) |
-| |
-| Maana Platform Architecture and GraphQL |
-| |
-| Data Model Split |
-| |
-| |
-| Event Handling |
-| Queries and Mutations |
-| Kinds and Services |
-| |
-| |
-| Focus on the GraphQL |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
+|
+/<![CDATA[/ div.rbtoc1532523907698 {padding: 0px;} div.rbtoc1532523907698 ul {list-style: disc;margin-left: 0px;} div.rbtoc1532523907698 li {margin-left: 0px;padding-left: 0px;} /]]>/
+
+Table of Contents
+Introduction
+GraphQL and Microservices
+GraphQL Learning Resources
+Knowledge Microservices and Bots
+Development Stages
+Stage: Design
+Stage: Local Service (Standalone)
+Stage: Local Service (Maana)
+Stage: Unmanaged Service
+Stage: Managed Service
+Debugging a Knowledge Microservice
+The BotAction Protocol
+Knowledge Applications
+Development Environments
+Visual Studio Code
+Command Line
+Recommended Plugins
+Settings
 | |
 | |
 | |
