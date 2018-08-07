@@ -17,9 +17,8 @@
 # Table of Contents
 
 |
-/<![CDATA[/ div.rbtoc1532523907698 {padding: 0px;} div.rbtoc1532523907698 ul {list-style: disc;margin-left: 0px;} div.rbtoc1532523907698 li {margin-left: 0px;padding-left: 0px;} /]]>/
+/<![CDATA[/ div.rbtoc1532523907698 {padding: 0px;} div.rbtoc1532523907698 ul {list-style: disc;margin-left: 0px;} div.rbtoc1532523907698 li {margin-left: 0px;padding-left: 0px;} /]]>
 
-Table of Contents
 Introduction
 GraphQL and Microservices
 GraphQL Learning Resources
