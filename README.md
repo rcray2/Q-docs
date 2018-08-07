@@ -46,7 +46,7 @@ Settings
 
 
 
-## Introduction
+# Introduction
 
 ## Welcome to Maana
 
