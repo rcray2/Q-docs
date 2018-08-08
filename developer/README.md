@@ -47,8 +47,54 @@ details the architecture of the platform, how to build a full solution and/or re
     * [Settings](https://github.com/maana-io/Q-docs/tree/d98306762614483fac29f46193e55b48ffaaabdd/docs/developer/developer.md#DeveloperGuide-Settings)
 
 ## Introduction
+### Welcome to Maana
 
-The Maana platform is built from a network of **GraphQL**-based **microservices**. Unlike pure client-server or n-tier architectures, Maana's microservices act as peers in an asynchronous and loosely-coupled arrangement that promotes independent scaling and extensibility. These services provide identity and access controls, graph persistence, search, machine learning, and natural language processing. Ultimately, these services provide reasoning capabilities to Knowledge Applications, which help solve domain-specific problems and support optimal decision-making capable of learning over time.
+Maana was founded with the vision of using technology to systematize the world’s industrial expertise and data into digital knowledge that could significantly advance the global economy.  Our mission is to facilitate the tens of millions of experts working in industrial companies around the world, and give them the ability to make better decisions, faster.  We are devoted to putting the power of artificial intelligence (AI) into the hands of millions of industry experts, offering enhanced decision-making tools in a rapid response environment. 
+
+### Better and Faster
+
+In 2013 Maana invented a new way to represent industrial knowledge mathematically, using the Maana Patented Computational Knowledge Graph™.  This unique technology enables industrial companies to encode human expertise and data from across silos into digital knowledge, eliminating the need to move data and enabling the creation of thousands of models at scale, through the re-usability of models across the enterprise.
+
+### Scope
+
+This guide is intended for the use of Solution Developers and Data Scientists, and describes how to develop such services (aka "bots") and applications and operationalize them in a production setting.
+
+### Glossary
+
+Prior to working with the Maana Platform, it is suggested that you familiarize yourself with some basic terms and concepts that will help the make most out of your Maana portal experience.  For a complete Glossary of Terms, please refer to the Appendix found at the end of this document.
+
+# The Maana Platform
+
+The Maana platform is used by solutions teams to deliver knowledge applications to their end users (i.e., business users, SMEs, managers).  This “solution team” approach involves the collaboration of analysts, engineers, and data scientists.  The platform is designed to build an enterprise-wide knowledge layer, utilizing search and exploration for solution development and delivery.
+
+## The Computational Knowledge Graph
+
+At the core of any Maana solution sits our Computational Knowledge Graph (CKG), a network of models built using machine learning techniques and artificial intelligence that powers AI-driven applications used to digitize decision support and operations.  It allows the knowledge of the business to be incrementally captured and grown, evolving and becoming increasingly sophisticated as more projects are developed.
+
+## Utilizing GraphQL
+
+Maana uses GraphQL to represent and expose its Computational Knowledge Graph.  GraphQL is a data query language created by Facebook and open-sourced in 2015 as an alternative to REST interfaces.
+
+GraphQL provides a complete and understandable description of the data in the API, gives clients the power to ask for exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.  With the GraphQL type system, the developers can access the full capabilities of your data from a single endpoint.
+
+GraphQL creates a uniform API across your entire application without being limited by a specific storage engine.  The developer provides functions for each field in the type system, and GraphQL calls them with optimal concurrency.
+
+#### Maana Platform Architecture and GraphQL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Maana platform is built from a network of **GraphQL**-based **microservices**. Unlike pure client-server or n-tier architectures, Maana's microservices act as peers in an asynchronous and loosely-coupled arrangement that promotes independent scaling and extensibility. These services provide identity and access controls, graph persistence, search, machine learning, and natural language processing. Ultimately, these services provide reasoning capabilities to Knowledge Applications, which help solve domain-specific problems and support optimal decision-making capable of learning over time.
 
 This guide is intended for Solution Developers and Data Scientists and describes how to develop such services \(aka "bots"\) and applications and operationalize them in a production setting.
 
